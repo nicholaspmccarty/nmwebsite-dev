@@ -6,7 +6,7 @@ const App = () => {
   useEffect(() => {
     const targetText = 'Welcome to nicholasmccarty.dev';
     let currentIndex = 0;
-
+    
     const typeEffect = setInterval(() => {
       setTypedText(targetText.slice(0, currentIndex));
       currentIndex++;
@@ -31,7 +31,11 @@ const App = () => {
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram Logo" className="social-icon" />
         </a>
       </div>
+      <div className="sportsSection">
+       {/* To Be Filled Later*/}
+      </div>
     </div>
+    
   );
 }
 
