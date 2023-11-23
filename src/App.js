@@ -1,9 +1,26 @@
-import React from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 
 const App = () => {
+  const [typedText, setTypedText] = useState('');
+
+  useEffect(() => {
+    const targetText = 'Welcome to nicholasmccarty.dev';
+    let currentIndex = 0;
+
+    const typeEffect = setInterval(() => {
+      setTypedText(targetText.slice(0, currentIndex));
+      currentIndex++;
+
+      if (currentIndex > targetText.length) {
+        clearInterval(typeEffect);
+      }
+    }, 100);
+
+    return () => clearInterval(typeEffect);
+  }, []);
   return (
     <div className="landing-page">
-      <h1>BIENVENIDOS a nicholasmccarty.dev</h1>
+      <h1>{typedText}</h1>
       <p>Check out my socials and things that interest me.</p>
       
       <div className="social-links">
